@@ -1,0 +1,16 @@
+#Global SYmfony
+/.idea/
+/web/bundles
+/app/bootstrap.php.cache
+/app/config/parameters.yml
+/app/cache/*
+/app/logs/*
+!app/cache/.gitkeep
+!app/logs/.gitkeep
+/vendor/
+/bin/
+
+#Global
+*.swp
+*.swo
+*.swn
