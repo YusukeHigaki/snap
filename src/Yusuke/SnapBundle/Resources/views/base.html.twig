@@ -2,18 +2,25 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     {% block stylesheets %}
         <link rel="stylesheet" href="{{ asset('bundles/yusukesnap/bootstrap/css/bootstrap.css') }}">
         <link rel="stylesheet" href="{{ asset('bundles/yusukesnap/css/main.css') }}">
         <link rel="stylesheet" href="{{ asset('bundles/yusukesnap/bootstrap/css/bootstrap-responsive.css') }}"
     {% endblock stylesheets %}
-
-    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
     <script type="text/javasctipt" src="{{ asset('bundles/yusukesnap/bootstrap/js/bootstrap.min.js') }}"></script>
+    <title>表参道のメンズファッション</title>
 </head>
 <body>
-{% block content %}
+<div class="container">
+    <a href="{{ path('list') }}" style="text-decoration:none;"><h1>表参道のメンズファッション</h1></a>
 
-{% endblock %}
+    {% block content %}{% endblock %}
+
+</div>
+
 </body>
 </html>
+

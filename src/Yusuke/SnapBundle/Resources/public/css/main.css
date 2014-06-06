@@ -8,3 +8,7 @@ body {
     background-color: #fff;
     padding: 20px;
 }
+
+a {
+    text-decoration: none;
+}

@@ -14,7 +14,24 @@ class ModelRepository extends EntityRepository
 {
     public function selectModels($limit)
     {
-        $models = $this->findBy(array('deleteFlag' => 0), array('id' => 'DESC'), $limit);
+        $qb = $this->createQueryBuilder('m')
+            ->where('m.pic1 IS NOT NULL')
+            ->andWhere('m.showFlag = 1')
+            ->andWhere('m.deleteFlag = 0')
+            ->orderBy('m.id','DESC')
+            ->setMaxResults($limit)
+            ->getQuery()
+        ;
+        $models = $qb->getResult();
         return $models;
+    }
+
+    public function selectModel($modelId)
+    {
+        $model = $this->findOneBy(array(
+            'id' => $modelId,
+            'deleteFlag' => 0
+        ));
+        return $model;
     }
 }

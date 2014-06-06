@@ -5,6 +5,8 @@ namespace Yusuke\SnapBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
+ * Model
+ *
  * @ORM\Entity(repositoryClass="Yusuke\SnapBundle\Entity\Repository\ModelRepository")
  * @ORM\Table(name="model")
  */
@@ -76,37 +78,37 @@ class Model
     /**
      * @var string
      *
-     * @ORM\Column(name="pic1", type="string", nullable=true)
+     * @ORM\Column(name="mail", type="string", length=100, nullable=true)
+     */
+    private $mail;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="career", type="string", length=100, nullable=true)
+     */
+    private $career;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="pic1", type="string", length=100, nullable=true)
      */
     private $pic1;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="pic2", type="string", nullable=true)
+     * @ORM\Column(name="pic2", type="string", length=100, nullable=true)
      */
     private $pic2;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="pic3", type="string", nullable=true)
+     * @ORM\Column(name="pic3", type="string", length=100, nullable=true)
      */
     private $pic3;
-
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="created_at", type="datetime", nullable=false)
-     */
-    private $createdAt;
-
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="updated_at", type="datetime", nullable=false)
-     */
-    private $updatedAt;
 
     /**
      * @var boolean
@@ -114,6 +116,13 @@ class Model
      * @ORM\Column(name="delete_flag", type="boolean", nullable=false)
      */
     private $deleteFlag;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="show_flag", type="boolean", nullable=false)
+     */
+    private $showFlag;
 
     /**
      * @var integer
@@ -313,7 +322,7 @@ class Model
     /**
      * Set glasses
      *
-     * @param integer $glasses
+     * @param string $glasses
      * @return Model
      */
     public function setGlasses($glasses)
@@ -326,7 +335,7 @@ class Model
     /**
      * Get glasses
      *
-     * @return integer 
+     * @return string 
      */
     public function getGlasses()
     {
@@ -334,9 +343,55 @@ class Model
     }
 
     /**
+     * Set mail
+     *
+     * @param string $mail
+     * @return Model
+     */
+    public function setMail($mail)
+    {
+        $this->mail = $mail;
+
+        return $this;
+    }
+
+    /**
+     * Get mail
+     *
+     * @return string 
+     */
+    public function getMail()
+    {
+        return $this->mail;
+    }
+
+    /**
+     * Set career
+     *
+     * @param string $career
+     * @return Model
+     */
+    public function setCareer($career)
+    {
+        $this->career = $career;
+
+        return $this;
+    }
+
+    /**
+     * Get career
+     *
+     * @return string 
+     */
+    public function getCareer()
+    {
+        return $this->career;
+    }
+
+    /**
      * Set pic1
      *
-     * @param integer $pic1
+     * @param string $pic1
      * @return Model
      */
     public function setPic1($pic1)
@@ -349,7 +404,7 @@ class Model
     /**
      * Get pic1
      *
-     * @return integer 
+     * @return string 
      */
     public function getPic1()
     {
@@ -359,7 +414,7 @@ class Model
     /**
      * Set pic2
      *
-     * @param integer $pic2
+     * @param string $pic2
      * @return Model
      */
     public function setPic2($pic2)
@@ -372,7 +427,7 @@ class Model
     /**
      * Get pic2
      *
-     * @return integer 
+     * @return string 
      */
     public function getPic2()
     {
@@ -382,7 +437,7 @@ class Model
     /**
      * Set pic3
      *
-     * @param integer $pic3
+     * @param string $pic3
      * @return Model
      */
     public function setPic3($pic3)
@@ -395,57 +450,11 @@ class Model
     /**
      * Get pic3
      *
-     * @return integer 
+     * @return string 
      */
     public function getPic3()
     {
         return $this->pic3;
-    }
-
-    /**
-     * Set createdAt
-     *
-     * @param \DateTime $createdAt
-     * @return Model
-     */
-    public function setCreatedAt($createdAt)
-    {
-        $this->createdAt = $createdAt;
-
-        return $this;
-    }
-
-    /**
-     * Get createdAt
-     *
-     * @return \DateTime 
-     */
-    public function getCreatedAt()
-    {
-        return $this->createdAt;
-    }
-
-    /**
-     * Set updatedAt
-     *
-     * @param \DateTime $updatedAt
-     * @return Model
-     */
-    public function setUpdatedAt($updatedAt)
-    {
-        $this->updatedAt = $updatedAt;
-
-        return $this;
-    }
-
-    /**
-     * Get updatedAt
-     *
-     * @return \DateTime 
-     */
-    public function getUpdatedAt()
-    {
-        return $this->updatedAt;
     }
 
     /**
@@ -469,6 +478,29 @@ class Model
     public function getDeleteFlag()
     {
         return $this->deleteFlag;
+    }
+
+    /**
+     * Set showFlag
+     *
+     * @param boolean $showFlag
+     * @return Model
+     */
+    public function setShowFlag($showFlag)
+    {
+        $this->showFlag = $showFlag;
+
+        return $this;
+    }
+
+    /**
+     * Get showFlag
+     *
+     * @return boolean 
+     */
+    public function getShowFlag()
+    {
+        return $this->showFlag;
     }
 
     /**

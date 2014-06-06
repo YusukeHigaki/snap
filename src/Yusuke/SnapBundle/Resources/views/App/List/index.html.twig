@@ -1,6 +1,8 @@
 {% extends 'YusukeSnapBundle::base.html.twig' %}
 {% block content %}
     {% for Model in Models %}
-        {{ Model.name }}
+        {% if Model.pic1 is defined %}
+            <a href="{{ path('model', {'modelId': Model.id}) }}"><img src="{{ Model.pic1 }}"></a>
+        {% endif %}
     {% endfor %}
 {% endblock %}

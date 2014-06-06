@@ -1,0 +1,16 @@
+{% extends 'YusukeSnapBundle::base.html.twig' %}
+{% block content %}
+    {{ Model.name }}
+    {{ Model.age }}
+    {{ Model.tops }}
+    {{ Model.inner }}
+    {{ Model.bottom }}
+    {{ Model.bag }}
+    {{ Model.shoes }}
+    {{ Model.watch }}
+    {{ Model.glasses }}
+
+    <img src="{{ Model.pic1 }}">
+    <img src="{{ Model.pic2 }}">
+    <img src="{{ Model.pic3 }}">
+{% endblock %}

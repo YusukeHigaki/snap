@@ -23,13 +23,15 @@ class ListController extends AppController
      * @Route("/", name="list")
      * @Template
      */
-    public function indexAction(Request $request)
+    public function indexAction()
     {
         $modelRepository = $this->get('doctrine')->getRepository('YusukeSnapBundle:Model');
         $models = $modelRepository->selectModels($this->container->getParameter('snaplist_limit'));
+        foreach ($models as $model){
+            $model->setPic1($this->container->getParameter('amazon_s3').$model->getPic1());
+        }
         return array(
             'Models' => $models,
         );
     }
-
 }
