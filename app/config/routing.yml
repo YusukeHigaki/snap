@@ -1,0 +1,5 @@
+yusuke_snap:
+    resource: "@YusukeSnapBundle/Controller/"
+    type:     annotation
+    prefix:   /
+

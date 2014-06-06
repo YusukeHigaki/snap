@@ -1,0 +1,6 @@
+{% extends 'YusukeSnapBundle::base.html.twig' %}
+{% block content %}
+    {% for Model in Models %}
+        {{ Model.name }}
+    {% endfor %}
+{% endblock %}
