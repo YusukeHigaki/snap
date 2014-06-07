@@ -3,6 +3,7 @@
 namespace Yusuke\SnapBundle\Entity\Repository;
 
 use Doctrine\ORM\EntityRepository;
+use Knp\Component\Pager\Paginator;
 
 /**
  * ModelRepository
@@ -12,7 +13,7 @@ use Doctrine\ORM\EntityRepository;
  */
 class ModelRepository extends EntityRepository
 {
-    public function selectModels($limit)
+    public function selectModels(Paginator $paginator, $page, $limit)
     {
         $qb = $this->createQueryBuilder('m')
             ->where('m.pic1 IS NOT NULL')
@@ -22,8 +23,8 @@ class ModelRepository extends EntityRepository
             ->setMaxResults($limit)
             ->getQuery()
         ;
-        $models = $qb->getResult();
-        return $models;
+        $pagination = $paginator->paginate($qb, $page, $limit);
+        return $pagination;
     }
 
     public function selectModel($modelId)
@@ -34,4 +35,35 @@ class ModelRepository extends EntityRepository
         ));
         return $model;
     }
+
+    public function selectPrevModel($modelId)
+    {
+        $qb = $this->createQueryBuilder('m')
+            ->where('m.id < :modelId')
+            ->setParameter('modelId', $modelId)
+            ->andWhere('m.showFlag = 1')
+            ->andWhere('m.deleteFlag = 0')
+            ->orderBy('m.id','DESC')
+            ->setMaxResults(1)
+            ->getQuery()
+        ;
+        $prevModel = $qb->getResult();
+        return $prevModel;
+    }
+
+    public function selectNextModel($modelId)
+    {
+        $qb = $this->createQueryBuilder('m')
+            ->where('m.id > :modelId')
+            ->setParameter('modelId', $modelId)
+            ->andWhere('m.showFlag = 1')
+            ->andWhere('m.deleteFlag = 0')
+            ->orderBy('m.id','ASC')
+            ->setMaxResults(1)
+            ->getQuery()
+        ;
+        $nextModel = $qb->getResult();
+        return $nextModel;
+    }
+
 }

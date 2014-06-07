@@ -2,6 +2,9 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
 
+parameters:
+    knp_paginator.template.pagination: YusukeSnapBundle:App:pagination.html.twig
+
 framework:
     #esi:             ~
     #translator:      { fallback: "%locale%" }

@@ -11,14 +11,16 @@
     {% endblock stylesheets %}
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
     <script type="text/javasctipt" src="{{ asset('bundles/yusukesnap/bootstrap/js/bootstrap.min.js') }}"></script>
+    <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}">
     <title>表参道のメンズファッション</title>
 </head>
 <body>
 <div class="container">
     <a href="{{ path('list') }}" style="text-decoration:none;"><h1>表参道のメンズファッション</h1></a>
-
+    <p>表参道でファッションスナップを撮っています。撮影のご依頼は<a href="https://twitter.com/yusukehigaki22">こちら</a></p>
+    {% block socialbutton %}{{ include('YusukeSnapBundle::socialbutton.html.twig') }}{% endblock %}
     {% block content %}{% endblock %}
-
+    <img src="{{ asset('img/bolo_ad.png') }}">
 </div>
 
 </body>

@@ -1,0 +1,6 @@
+[submodule "vendor/knp-components"]
+	path = vendor/knp-components
+	url = git://github.com/KnpLabs/knp-components.git
+[submodule "vendor/bundles/Knp/Bundle/PaginatorBundle"]
+	path = vendor/bundles/Knp/Bundle/PaginatorBundle
+	url = git://github.com/KnpLabs/KnpPaginatorBundle.git
