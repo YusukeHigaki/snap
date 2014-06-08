@@ -1,7 +1,5 @@
 body {
-    background-color: #eee;
-}
-body {
+    background-color: white;
     padding-top: 40px;
 }
 .content {
@@ -12,3 +10,9 @@ body {
 a {
     text-decoration: none;
 }
+
+h1 {
+    font-family:'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+    font-size: 24px;
+}
+

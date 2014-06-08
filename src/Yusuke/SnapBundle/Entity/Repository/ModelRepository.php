@@ -66,4 +66,29 @@ class ModelRepository extends EntityRepository
         return $nextModel;
     }
 
+    public function selectTodayModel($yesterdayModelId)
+    {
+        $qb = $this->createQueryBuilder('m')
+            ->where('m.id > :yesterdayModelId')
+            ->setParameter('yesterdayModelId', $yesterdayModelId)
+            ->andWhere('m.showFlag = 0')
+            ->andWhere('m.deleteFlag = 0')
+            ->orderBy('m.id','ASC')
+            ->setMaxResults(1)
+            ->getQuery()
+        ;
+        $todayModel = $qb->getResult();
+        return $todayModel;
+    }
+
+    public function updateModel()
+    {
+        $yesterdayModel = $this->findOneBy(array('deleteFlag' => 0, 'showFlag' => 1), array('id' => 'DESC'), 1);
+        $todayModel = $this->selectTodayModel($yesterdayModel->getId());
+        $todayModel[0]->setShowFlag(1);
+        $em = $this->getEntityManager();
+        $em->persist($todayModel[0]);
+        $em->flush();
+    }
+
 }

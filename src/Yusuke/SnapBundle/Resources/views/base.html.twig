@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% block stylesheets %}
-        <link rel="stylesheet" href="{{ asset('bundles/yusukesnap/bootstrap/css/bootstrap.css') }}">
+        <link rel="stylesheet" href="{{ asset('bundles/yusukesnap/bootstrap/css/bootstrap.min.css') }}">
         <link rel="stylesheet" href="{{ asset('bundles/yusukesnap/css/main.css') }}">
-        <link rel="stylesheet" href="{{ asset('bundles/yusukesnap/bootstrap/css/bootstrap-responsive.css') }}"
+
     {% endblock stylesheets %}
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
     <script type="text/javasctipt" src="{{ asset('bundles/yusukesnap/bootstrap/js/bootstrap.min.js') }}"></script>
@@ -15,14 +15,22 @@
     <title>表参道のメンズファッション</title>
 </head>
 <body>
+
+
 <div class="container">
-    <a href="{{ path('list') }}" style="text-decoration:none;"><h1>表参道のメンズファッション</h1></a>
+    <div class="row">
+        <div class="col-md-6"><a href="{{ path('list') }}" style="text-decoration:none;"><h1>表参道のメンズファッション</h1></a></div>
+        <div class="col-md-6">{% block socialbutton %}{{ include('YusukeSnapBundle::socialbutton.html.twig') }}{% endblock %}</div>
+    </div>
     <p>表参道でファッションスナップを撮っています。撮影のご依頼は<a href="https://twitter.com/yusukehigaki22">こちら</a></p>
-    {% block socialbutton %}{{ include('YusukeSnapBundle::socialbutton.html.twig') }}{% endblock %}
+    <hr>
+
     {% block content %}{% endblock %}
     <img src="{{ asset('img/bolo_ad.png') }}">
 </div>
 
 </body>
 </html>
+
+
 
