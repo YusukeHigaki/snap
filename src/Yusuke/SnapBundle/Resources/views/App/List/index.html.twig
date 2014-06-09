@@ -1,12 +1,14 @@
 {% extends 'YusukeSnapBundle::base.html.twig' %}
 {% block content %}
-    {{ knp_pagination_render(Models) }}
+    <div class="paginator">{{ knp_pagination_render(Models) }}</div>
+    <br>
     {% for Model in Models %}
         {% if Model.pic1 is defined %}
-            <a href="{{ path('model', {'modelId': Model.id}) }}"><img src="{{ Model.pic1 }}"></a>
+            <a href="{{ path('model', {'modelId': Model.id}) }}"><img class ="snap-list" src="{{ Model.pic1 }}"></a>
         {% endif %}
-        {{ Model.updatedAt|date('Y-m-d') }}
 
     {% endfor %}
-    {{ knp_pagination_render(Models) }}
+    <div class="paginator">{{ knp_pagination_render(Models) }}</div>
+    <hr>
+
 {% endblock %}

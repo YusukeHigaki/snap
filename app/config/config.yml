@@ -5,6 +5,7 @@ imports:
 parameters:
     knp_paginator.template.pagination: YusukeSnapBundle:App:pagination.html.twig
 
+
 framework:
     #esi:             ~
     #translator:      { fallback: "%locale%" }

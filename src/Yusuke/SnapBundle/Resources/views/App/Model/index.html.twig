@@ -1,36 +1,103 @@
 {% extends 'YusukeSnapBundle::base.html.twig' %}
 {% block content %}
-    <div class="ninja_onebutton">
-        <script type="text/javascript">
-            //<![CDATA[
-            (function(d){
-                if(typeof(window.NINJA_CO_JP_ONETAG_BUTTON_b6d8a16d170356c19efb230e95903d39)=='undefined'){
-                    document.write("<sc"+"ript type='text\/javascript' src='http:\/\/omt.shinobi.jp\/b\/b6d8a16d170356c19efb230e95903d39'><\/sc"+"ript>");
-                }else{
-                    window.NINJA_CO_JP_ONETAG_BUTTON_b6d8a16d170356c19efb230e95903d39.ONETAGButton_Load();}
-            })(document);
-            //]]>
-        </script>
-        <span class="ninja_onebutton_hidden" style="display:none;">{{ Model.url }}</span>
-        <span style="display:none;" class="ninja_onebutton_hidden">表参道のファッションスナップ</span>
+
+    <div class="row">
+        <div class="col-md-6">
+            <img id="snap1" src="{{ Model.pic1 }}"><br>
+            <img id="snap2" src="{{ Model.pic2 }}"><br>
+            <img id="snap3" src="{{ Model.pic3 }}"><br>
+            <script type='text/javascript'>
+                <!--
+                var img = new Image();
+                img.src = "{{ Model.pic1 }}";
+                var width = img.width;
+                var height = img.height;
+                if (width > height){
+                    var dom = document.getElementById('snap1');
+                    dom.style.width = "750px";
+                    dom.style.height = "500px";
+                }
+
+                img.src = "{{ Model.pic2 }}";
+                var width = img.width;
+                var height = img.height;
+                if (width > height){
+                    var dom = document.getElementById('snap2');
+                    dom.style.width = "750px";
+                    dom.style.height = "500px";
+                }
+
+                img.src = "{{ Model.pic3 }}";
+                var width = img.width;
+                var height = img.height;
+                if (width > height){
+                    var dom = document.getElementById('snap3');
+                    dom.style.width = "750px";
+                    dom.style.height = "500px";
+                }
+                //-->
+            </script>
+
+        </div>
+
+        <div class="col-md-6">
+            <div class="ninja_onebutton">
+                <script type="text/javascript">
+                    //<![CDATA[
+                    (function(d){
+                        if(typeof(window.NINJA_CO_JP_ONETAG_BUTTON_b6d8a16d170356c19efb230e95903d39)=='undefined'){
+                            document.write("<sc"+"ript type='text\/javascript' src='http:\/\/omt.shinobi.jp\/b\/b6d8a16d170356c19efb230e95903d39'><\/sc"+"ript>");
+                        }else{
+                            window.NINJA_CO_JP_ONETAG_BUTTON_b6d8a16d170356c19efb230e95903d39.ONETAGButton_Load();}
+                    })(document);
+                    //]]>
+                </script>
+                <span class="ninja_onebutton_hidden" style="display:none;">{{ Model.url }}</span>
+                <span style="display:none;" class="ninja_onebutton_hidden">表参道のファッションスナップ</span>
+            </div>
+            {{ Model.updatedAt|date('Y-m-d') }}<br>
+
+            名前 : {{ Model.name }} <br>
+
+            {% if Model.age is not empty %}
+                年齢 : {{ Model.age }} <br>
+            {% endif %}
+
+            {% if Model.tops is not empty %}
+                トップス : {{ Model.tops }} <br>
+            {% endif %}
+
+            {% if Model.inner is not empty %}
+                インナー : {{ Model.inner }} <br>
+            {% endif %}
+
+            {% if Model.bottom is not empty %}
+                ボトムス : {{ Model.bottom }} <br>
+            {% endif %}
+
+            {% if Model.bag is not empty %}
+                バッグ : {{ Model.bag }} <br>
+            {% endif %}
+
+            {% if Model.shoes is not empty %}
+                シューズ : {{ Model.shoes }} <br>
+            {% endif %}
+
+            {% if Model.watch is not empty %}
+                ウォッチ : {{ Model.watch }} <br>
+            {% endif %}
+
+            {% if Model.glasses is not empty %}
+                サングラス : {{ Model.glasses }} <br>
+            {% endif %}
+
+            <hr>
+            {% if NextModelUrl is not null %}<a href="{{ NextModelUrl }}">←最近の投稿</a> /{% endif %}
+            {% if PrevModelUrl is not null %}<a href="{{ PrevModelUrl }}">以前の投稿→</a>{% endif %}
+
+        </div>
     </div>
+    <hr>
 
-    名前 : {{ Model.name }} <br>
-    年齢 : {{ Model.age }} <br>
-    トップス : {{ Model.tops }} <br>
-    インナー : {{ Model.inner }} <br>
-    ボトムス : {{ Model.bottom }} <br>
-    バッグ : {{ Model.bag }} <br>
-    シューズ : {{ Model.shoes }} <br>
-    ウォッチ : {{ Model.watch }} <br>
-    サングラス : {{ Model.glasses }} <br>
-    {{ Model.updatedAt|date('Y-m-d') }}
-
-    <img src="{{ Model.pic1 }}">
-    <img src="{{ Model.pic2 }}">
-    <img src="{{ Model.pic3 }}">
-
-    {% if NextModelUrl is not null %}<a href="{{ NextModelUrl }}">←最近の投稿</a>{% endif %} /
-    {% if PrevModelUrl is not null %}<a href="{{ PrevModelUrl }}">以前の投稿→</a>{% endif %}
 
 {% endblock %}

@@ -5,12 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% block stylesheets %}
-        <link rel="stylesheet" href="{{ asset('bundles/yusukesnap/bootstrap/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('bundles/yusukesnap/bootstrap/css/bootstrap.css') }}">
         <link rel="stylesheet" href="{{ asset('bundles/yusukesnap/css/main.css') }}">
-
     {% endblock stylesheets %}
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
-    <script type="text/javasctipt" src="{{ asset('bundles/yusukesnap/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}">
     <title>表参道のメンズファッション</title>
 </head>
@@ -18,17 +17,17 @@
 
 
 <div class="container">
-    <div class="row">
-        <div class="col-md-6"><a href="{{ path('list') }}" style="text-decoration:none;"><h1>表参道のメンズファッション</h1></a></div>
-        <div class="col-md-6">{% block socialbutton %}{{ include('YusukeSnapBundle::socialbutton.html.twig') }}{% endblock %}</div>
-    </div>
-    <p>表参道でファッションスナップを撮っています。撮影のご依頼は<a href="https://twitter.com/yusukehigaki22">こちら</a></p>
+ <a href="{{ path('list') }}"><h1>表参道のメンズファッション</h1></a>
+ {% block socialbutton %}{{ include('YusukeSnapBundle::socialbutton.html.twig') }}{% endblock %}
+    <p>表参道でファッションスナップを撮っています。毎日更新。撮影のご依頼は<a href="https://twitter.com/yusukehigaki22">こちら。</a></p>
     <hr>
 
     {% block content %}{% endblock %}
-    <img src="{{ asset('img/bolo_ad.png') }}">
+<!--    <img src="{{ asset('img/bolo_ad.png') }}"> -->
 </div>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="bundles/yusukesnap/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>
 

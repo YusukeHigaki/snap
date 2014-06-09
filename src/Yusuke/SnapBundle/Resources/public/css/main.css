@@ -1,18 +1,56 @@
 body {
     background-color: white;
-    padding-top: 40px;
+    padding-top: 20px;
 }
 .content {
     background-color: #fff;
     padding: 20px;
 }
 
-a {
-    text-decoration: none;
+h1 {
+    font-family:'Hiragino Mincho ProN', serif;
+    font-size: 24px;
+    font-weight: normal;
+    color: #696969;
 }
 
-h1 {
-    font-family:'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
-    font-size: 24px;
+
+img.snap-list {
+    width: 375px;
+    height: 560px;
+    margin: 0px 0px 20px 0px;
+    border: solid 1px #eeeeee;
+    padding: 4px;
+}
+
+img#snap1 {
+    width: 500px;
+    height: 750px;
+    margin: 0px 0px 20px 0px;
+    border: solid 1px #eeeeee;
+    padding: 4px;
+}
+
+img#snap2 {
+    width: 500px;
+    height: 750px;
+    margin: 0px 0px 20px 0px;
+    border: solid 1px #eeeeee;
+    padding: 4px;
+}
+
+img#snap3 {
+    width: 500px;
+    height: 750px;
+    margin: 0px 0px 20px 0px;
+    border: solid 1px #eeeeee;
+    padding: 4px;
+}
+
+
+
+div.paginator {
+    text-align: right;
+    margin: -30px 0px -30px 0px;
 }
 
