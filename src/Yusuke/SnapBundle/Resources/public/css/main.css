@@ -47,10 +47,11 @@ img#snap3 {
     padding: 4px;
 }
 
-
-
 div.paginator {
     text-align: right;
     margin: -30px 0px -30px 0px;
 }
 
+p.copyright {
+    text-align: right;
+}
