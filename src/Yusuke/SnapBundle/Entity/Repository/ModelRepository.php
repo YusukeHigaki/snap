@@ -97,7 +97,6 @@ class ModelRepository extends EntityRepository
             ->where('m.pic1 IS NOT NULL')
             ->andWhere('m.showFlag = 1')
             ->andWhere('m.deleteFlag = 0')
-            //->andWhere('m.id = 2267')
             ->getQuery()
         ;
         $AllModel = $qb->getResult();

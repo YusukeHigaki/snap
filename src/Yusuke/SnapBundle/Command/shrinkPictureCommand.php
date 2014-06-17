@@ -60,5 +60,7 @@ class ShrinkPictureCommand extends ContainerAwareCommand
                 imagejpeg($canvas, $thumbnailDir.$models[$i]->getPic3(), 75);
             }
         }
+        $output->writeln(sprintf('<info>サムネイル画像を生成しました</info>'));
+
     }
 }
