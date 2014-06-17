@@ -8,7 +8,7 @@
 namespace Yusuke\SnapBundle\Controller\App;
 
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 /**
  * AppController.
