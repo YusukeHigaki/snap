@@ -33,7 +33,7 @@ class ListController extends AppController
             $this->container->getParameter('snaplist_limit')
         );
         foreach ($models as $model){
-            $model->setPic1($this->container->getParameter('amazon_s3').$model->getPic1());
+            $model->setPic1($this->container->getParameter('thumbnail_dir').$model->getPic1());
         }
         return array(
             'Models' => $models,

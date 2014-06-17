@@ -27,9 +27,9 @@ class ModelController extends AppController
         $modelRepository = $this->get('doctrine')->getRepository('YusukeSnapBundle:Model');
         $model = $modelRepository->selectModel($modelId);
 
-        if ($model->getPic1()) $model->setPic1($this->container->getParameter('amazon_s3').$model->getPic1());
-        if ($model->getPic2()) $model->setPic2($this->container->getParameter('amazon_s3').$model->getPic2());
-        if ($model->getPic3()) $model->setPic3($this->container->getParameter('amazon_s3').$model->getPic3());
+        if ($model->getPic1()) $model->setPic1($this->container->getParameter('thumbnail_dir').$model->getPic1());
+        if ($model->getPic2()) $model->setPic2($this->container->getParameter('thumbnail_dir').$model->getPic2());
+        if ($model->getPic3()) $model->setPic3($this->container->getParameter('thumbnail_dir').$model->getPic3());
         $model->setUrl($request->getUri());
 
         $prevModel = $modelRepository->selectPrevModel($modelId);
