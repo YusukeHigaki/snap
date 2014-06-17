@@ -32,6 +32,6 @@ class ShowModelCommand extends ContainerAwareCommand
         $modelRepository = $this->getContainer()->get('doctrine')->getRepository('YusukeSnapBundle:Model');
         $modelRepository->updateModel();
 
-        $output->writeLn(sprintf('<info>本日のモデルを公開しました</info>'));
+        $output->writeln(sprintf('<info>本日のモデルを公開しました</info>'));
     }
 } 

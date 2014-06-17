@@ -1,6 +1,8 @@
-#Global SYmfony
+#Global Symfony
 /.idea/
 /web/bundles
+/web/img/model/original/*
+/web/img/model/thumbnail/*
 /app/bootstrap.php.cache
 /app/config/parameters.yml
 /app/cache/*

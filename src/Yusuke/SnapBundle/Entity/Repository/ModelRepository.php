@@ -91,4 +91,17 @@ class ModelRepository extends EntityRepository
         $em->flush();
     }
 
+    public function selectAllModel()
+    {
+        $qb = $this->createQueryBuilder('m')
+            ->where('m.pic1 IS NOT NULL')
+            ->andWhere('m.showFlag = 1')
+            ->andWhere('m.deleteFlag = 0')
+ //           ->andWhere('m.id = 2267')
+            ->getQuery()
+        ;
+        $AllModel = $qb->getResult();
+        return $AllModel;
+    }
+
 }
