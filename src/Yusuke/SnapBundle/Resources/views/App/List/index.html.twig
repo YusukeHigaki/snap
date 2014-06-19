@@ -2,12 +2,17 @@
 {% block content %}
     <div class="paginator">{{ knp_pagination_render(Models) }}</div>
     <br>
+    
+    <div class="row">
     {% for Model in Models %}
         {% if Model.pic1 is defined %}
-            <a href="{{ path('model', {'modelId': Model.id}) }}"><img class ="snap-list" src="{{ asset(Model.pic1) }}"></a>
-
+		<div class="col-xs-12 col-sm-6 col-md-4">
+		<a href="{{ path('model', {'modelId': Model.id}) }}"><img id="snap-list" src="{{ asset(Model.pic1) }}" class="img-responsive"/></a>
+	        </div>
         {% endif %}
     {% endfor %}
+    </div>
+    
     <div class="paginator">{{ knp_pagination_render(Models) }}</div>
     <hr>
 

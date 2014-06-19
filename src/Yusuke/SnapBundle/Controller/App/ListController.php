@@ -14,8 +14,6 @@ use Yusuke\SnapBundle\Exception\ClientErrorException;
 
 /**
  * ListController.
- *
- * @Route("/App/list")
  */
 class ListController extends AppController
 {

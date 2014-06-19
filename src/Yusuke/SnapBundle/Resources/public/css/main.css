@@ -9,39 +9,19 @@ body {
 
 h1 {
     font-family:'Hiragino Mincho ProN', serif;
-    font-size: 24px;
+    font-size: 22px;
     font-weight: normal;
     color: #696969;
 }
 
 
-img.snap-list {
-    width: 375px;
-    height: 560px;
+img#snap-list {
     margin: 0px 0px 20px 0px;
     border: solid 1px #eeeeee;
     padding: 4px;
 }
 
-img#snap1 {
-    width: 500px;
-    height: 750px;
-    margin: 0px 0px 20px 0px;
-    border: solid 1px #eeeeee;
-    padding: 4px;
-}
-
-img#snap2 {
-    width: 500px;
-    height: 750px;
-    margin: 0px 0px 20px 0px;
-    border: solid 1px #eeeeee;
-    padding: 4px;
-}
-
-img#snap3 {
-    width: 500px;
-    height: 750px;
+img#snap {
     margin: 0px 0px 20px 0px;
     border: solid 1px #eeeeee;
     padding: 4px;
@@ -55,3 +35,4 @@ div.paginator {
 p.copyright {
     text-align: right;
 }
+
